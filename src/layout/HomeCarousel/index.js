@@ -36,6 +36,15 @@ const LookBook2Text = styled.h1`
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  font-weight: 400;
+
+  @media only screen and (max-width: 600px) {
+    top: auto;
+    bottom: 16px;
+    left: 16px;
+    transform: translate(0%, 0%);
+    color: black;
+  }
 `
 
 // Data

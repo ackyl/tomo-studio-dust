@@ -4,10 +4,15 @@ import { Link } from "gatsby"
 import Lookbook1 from "../../images/lookbook-preview-1.png"
 import Lookbook2 from "../../images/lookbook-preview-2.png"
 
+// Styles
 const LookbookPreviewWrapper = styled.div `
   width: 100%;
   background-color: #DEDEDE;
   padding: 32px 0;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
 `
 
 const LookbookCard = styled.div.attrs(props => ({
@@ -20,6 +25,10 @@ const LookbookCard = styled.div.attrs(props => ({
   background-position: center center;
   background-size: cover;
   margin: 32px;
+
+  @media only screen and (max-width: 600px) {
+    margin: 0;
+  }
 `
 
 const LookbookText = styled.h1.attrs(props => ({
@@ -44,6 +53,7 @@ const LookbookLink = styled(Link).attrs(props => ({
   text-decoration: underline;
 `
 
+// Markup
 const LookbookPreview = () => {
   return (
     <LookbookPreviewWrapper>
