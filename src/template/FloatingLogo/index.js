@@ -1,16 +1,17 @@
 import * as React from "react"
+import styled from 'styled-components';
 import DustLogo from "../../images/dust-logo.png"
 
-const styles = {
-  width: "340px",
-  position: "fixed",
-  bottom: 24,
-  left: 32
-}
+const FloatingLogoImg = styled.img`
+  width: 340px;
+  position: fixed;
+  bottom: 24px;
+  left: 32px;
+`
 
 const FloatingLogo = () => {
   return (
-    <img src={DustLogo} alt="Dust Logo" style={styles}></img>
+    <FloatingLogoImg src={DustLogo} alt="Dust Logo"/>
   )
 }
 

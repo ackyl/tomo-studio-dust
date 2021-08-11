@@ -1,4 +1,5 @@
 import * as React from "react"
+import styled from 'styled-components';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -6,36 +7,36 @@ import LookBook1Image from "../../images/lookbook-1.png";
 import LookBook2Image from "../../images/lookbook-2.png";
 
 // Styles
-const carouselWrapperStyle = {
-  width: "100vw",
-  height: "100vh"
-}
+const HomeCarouselWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+`
 
-const carouselImageStyle = {
-  width: "100%",
-  height: "100vh",
-  "object-fit": "cover"
-}
+const HomeCarouselImage = styled.img`
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+`
 
-const lookBookWrapper = {
-  position: "relative"
-}
+const LookBookWrapper = styled.div`
+  position: relative;
+`
 
-const lookBook1TextStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(0, -50%)",
-  "max-width": "400px"
-}
+const LookBook1Wrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  max-width: 400px;
+`
 
-const lookBook2TextStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  color: "white"
-}
+const LookBook2Text = styled.h1`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+`
 
 // Data
 const carouselSettings = {
@@ -50,25 +51,27 @@ const carouselSettings = {
 // Markup
 const HomeCarousel = () => {
   return (
-    <div style={carouselWrapperStyle}>
+    <HomeCarouselWrapper>
       <Slider {...carouselSettings}>
         <div>
-          <div style={lookBookWrapper}>
-            <img src={LookBook1Image} style={carouselImageStyle}></img>
-            <div style={lookBook1TextStyle}>
+          <LookBookWrapper>
+            <HomeCarouselImage src={LookBook1Image} />
+            <LookBook1Wrapper>
               <h1>Our community shapes us.</h1>
               <p>We started as a humble brand, which then continue to flourish into a tight-knit community that fosters friendship, positivity, and inclusivity.</p>
-            </div>
-          </div>
+            </LookBook1Wrapper>
+          </LookBookWrapper>
         </div>
         <div>
-          <div style={lookBookWrapper}>
-            <img src={LookBook2Image} style={carouselImageStyle}></img>
-            <h1 style={lookBook2TextStyle}>Comfort In Style</h1>
-          </div>
+          <LookBookWrapper>
+            <HomeCarouselImage src={LookBook2Image} />
+            <LookBook2Text>
+              Comfort In Style
+            </LookBook2Text>
+          </LookBookWrapper>
         </div>
       </Slider>
-    </div>
+    </HomeCarouselWrapper>
   )
 }
 
